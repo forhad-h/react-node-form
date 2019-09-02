@@ -1,0 +1,4 @@
+# Upload multiple file according to https://programmingwithmosh.com/javascript/react-file-upload-proper-server-side-nodejs-easy/
+# Make some more fields e.g text etc and store data
+# Display all data
+# Make Edit and delete functionality
