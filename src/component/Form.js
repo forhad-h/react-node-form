@@ -4,14 +4,31 @@ import axios from 'axios'
 import './Form.scss'
 
 const Form = () => {
-  const [selectedFile, setSelectedFile] = useState(0)
+  const [selectedFiles, setSelectedFiles] = useState([])
+
   const onChangeHandler = event => {
-    setSelectedFile(event.target.files[0])
+    if (maxSelectFile(event)) {
+      setSelectedFiles(event.target.files)
+    }
   }
+
   const onSubmitHandler = async () => {
     const data = new FormData()
-    data.append('file', selectedFile)
+    for (let i = 0; i < selectedFiles.length; i++) {
+      data.append('file', selectedFiles[i])
+    }
     await axios.post('http://localhost:8000/upload', data)
+  }
+
+  const maxSelectFile = event => {
+    const files = event.target.files
+    if (files.length > 3) {
+      const msg = 'Only 3 files can be uploaded at a time'
+      event.target.value = ''
+      console.log(msg)
+      return false
+    }
+    return true
   }
   return (
     <div className='container'>
@@ -23,7 +40,7 @@ const Form = () => {
               <input
                 type='file'
                 className='form-control'
-                multiple=''
+                multiple
                 onChange={onChangeHandler}
               />
               <button
