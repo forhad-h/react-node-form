@@ -2,11 +2,13 @@
 
 ## Used Module
 
-- axios
-- cors
-- express
-- multer
-- node-sass
-- react
-- react-dom
-- react-scripts
+- `axios`
+- `cors`
+- `express`
+- `multer`
+- `node-sass`
+- `react`
+- `react-dom`
+- `react-scripts`
+- `react-toastify`
+- `reactstrap`
