@@ -5,9 +5,11 @@
 
 ## Installation
 
-`git clone https://github.com/forhad-h/react-node-form.git`  
-`cd react-node-form`  
-`yarn start`
+```
+git clone https://github.com/forhad-h/react-node-form.git  
+cd react-node-form  
+yarn start
+```
 
 #### Take another terminal/cmd
 
